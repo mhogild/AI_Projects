@@ -1,8 +1,5 @@
-# AI-Projektportefølje-Ansøgning-til-Søstrene-Grene
-## 📚 Projekter
+## 📚 Project
 
-- [📘 Projekt 1 – RAG Chatbot](./Projekt_1_RAG_Chatbot)
-- [🗞️ Projekt 2 – AI-Nyhedsassistent](./Projekt_2_Personlig_AI_Nyhedsassistent)
-- [💬 Projekt 3 – Automatisk kundedialog](./Projekt_3_Automatisk_kundedialog_Manychat_Zapier)
-
-
+- [📘 Project 1 – RAG Chatbot](./Project_1_RAG_Chatbot)
+- [🗞️ Project 2 – Personal AI News Assistant](./Project_2_Personal_AI_News_Assistant)
+- [💬 Project 3 – Automated Customer Dialog (Manychat & Zapier)](./Project_3_Automated_Customer_Dialog)
