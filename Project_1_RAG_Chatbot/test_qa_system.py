@@ -4,10 +4,10 @@ from langchain_community.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 import os
 
-# 🔐 Sæt din OpenAI API-nøgle (du må gerne sætte denne via miljøvariabel i stedet)
-os.environ["OPENAI_API_KEY"] = "XX" #Skjult - Du skal være velkommen til at spørge efter API hvis du gerne vil teste den :)
+# Set your OpenAI API key
+os.environ["OPENAI_API_KEY"] = "XX" #API key is hidden
 
-# 1. Load gemte embeddings fra Chroma
+# 1. Load saved embeddings from Chroma
 vectorstore = Chroma(
     persist_directory="./Projekt_1_RAG_Chatbot/chroma_test",
     embedding_function=OpenAIEmbeddings()
@@ -16,7 +16,7 @@ vectorstore = Chroma(
 # 2. Retriever
 retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
-# 3. GPT-model og kæde
+# 3. GPT model and chain
 llm = ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.5)
 
 qa = RetrievalQA.from_chain_type(

@@ -1,27 +1,38 @@
-# 💬 Projekt 3 – Automatisk kundedialog med Manychat og Zapier
+# 💬 Project 3 – Automated Customer Dialog with Manychat and Zapier
 
-## 🔍 Forretningscase
+## 🔍 Business Case
 
-Restauranter og servicevirksomheder modtager dagligt mange kundehenvendelser – særligt vedr. bordbooking. Ofte kræver dette manuel håndtering, hvilket:
+Restaurants and service-oriented businesses often receive large volumes of customer inquiries — especially regarding table reservations or general service requests. These are typically handled manually, which:
 
-- Binder personale  
-- Øger svartider  
-- Giver risiko for fejl eller overset kommunikation  
+- Ties up staff  
+- Increases response time  
+- Introduces risk of errors or missed messages  
 
-**Løsningen i dette projekt:**  
-Et automatiseret setup, der besvarer og håndterer kundehenvendelser uden menneskelig indblanding, og som er skalerbart, driftssikkert og billigt.
+**The solution in this project:**  
+An automated setup that handles customer inquiries without human intervention, while remaining scalable, reliable, and cost-efficient.
 
 ---
 
-## 🎯 Relevans for Søstrene Grene
+## 🎯 Relevance Across Industries
 
-Dette setup hjælper Søstrene Grene ved at:
+This setup can help organizations:
 
-- **Automatisere kundehenvendelser** – Kunden oplever en hurtig, hjælpsom og “søsterlig” respons, uden belastning af medarbejdere i HQ eller f.eks. kundeservice.
-- **Skalere effektivt til nye butikker og sprog** – uden ekstra medarbejderressourcer, hvilket understøtter ekspansion og international tilstedeværelse.
+- **Automate customer communication** — Customers receive fast, helpful, and friendly responses without burdening support or administrative teams.
+- **Scale to new locations and languages** — without requiring additional staff, supporting both expansion and global presence.
+- **Maintain consistency and availability** — answering questions around the clock, even outside normal business hours.
+
+This type of solution is useful in hospitality, retail, event planning, and service sectors — and can serve both small businesses and global enterprises.
 
 ---
 
 ## ⚙️ Manychat Automation
 
-**Manychat**, som registrerer alle henvendelser, er integreret med **Zapier** til automatisk at kontrollere, ved henvendelser om bordreservation, om der er plads eller ej – og hvis der er, bliver gæsterne placeret efter optimeringslogik og får automatisk svar på henvendelsen via Manychat.
+**Manychat**, which handles incoming inquiries, is integrated with **Zapier** to automatically manage requests such as reservations or service questions.
+
+When a customer asks about availability (e.g., for a table), Zapier checks the schedule or database and, if there is space, the system applies smart logic to allocate the request. The user then receives an automated response via Manychat — no human involvement needed.
+
+This setup ensures:
+
+- Fast replies
+- Reliable communication flow
+- Seamless handoff between systems and channels

@@ -1,44 +1,50 @@
-# 🗞️ Projekt 2 – Personlig AI-Nyhedsassistent
+# 🗞️ Project 2 – Personal AI News Assistant
 
-## 🔍 Forretningscase
+## 🔍 Business Case
 
-Automatiseret nyhedsindsamling og daglig personaliseret opsummering.
+Automated news collection and personalized daily summaries.
 
-Der lå ikke den store udfordring i at indsamle nyheder/mails/beskeder/updates, hvilket også anses at være let tilkendeligt via copilot til Microsoft produkter. Udfordringen jeg havde givet mig selv var også at bruge ML til at forbedre relevansen af de nyheder jeg får hver dag.
+While collecting news/emails/updates from various sources is not technically challenging (and is increasingly supported by tools like Microsoft Copilot), the real challenge was improving the *relevance* of what is collected using machine learning.
 
-Dette projekt automatiserer daglig nyhedsopsamling og filtrering med henblik på at levere 3 personligt relevante AI-nyheder til brugeren hver morgen. Målet er at den desuden via ML skal blive bedre til at vælge de mest relevante nyheder via brugerfeedback.
+This project automates daily news aggregation and filtering to deliver 3 personally relevant AI-related news stories to the user every morning. The goal is for the assistant to continuously improve its relevance using user feedback and machine learning.
 
-På den måde undgår brugeren at skulle undersøge adskillige sider og steder, men kan få det hele ét sted fra.
-
----
-
-## 🎯 Relevans for Søstrene Grene
-
-Denne AI-drevne løsning leverer:
-
-- **Personlige AI-nyhedsopsamlinger**, fx om markedstendenser, bæredygtighed, branchetrends og leverandørforandringer – vigtig viden for HQ og butikschefer.
-- **Effektivisering af vidensdeling**, så HQ nemt kan dele de tre vigtigste nyheder, uden at medarbejdere skal bruge tid på at finde dem.
+This eliminates the need for the user to browse multiple websites and sources — everything comes from a single, intelligent feed.
 
 ---
 
-## Zapier projekt (Zap a):
-Følgende er en kort forklaring af automationen
+## 🎯 Relevance Across Organizations and Generations
+
+This AI-powered assistant delivers:
+
+- **Personalized news collections** based on interests like market trends, sustainability, industry updates, or tech innovation — valuable for managers, students, professionals, and curious learners.
+- **Streamlined knowledge sharing**, enabling teams, departments, or families to access curated highlights without wasting time searching through irrelevant sources.
+
+The tool fits both younger, tech-savvy users who want fast overviews, and older generations who prefer simplified and focused information.
+
+---
+
+## 🔄 Zapier Workflow (Zap A)
+
+Below is a brief explanation of the automation:
+
 ![Zapier Flow – Zap A](./Projekt-2-Personlig-AI-Nyhedsassistent/zap_a_flow.png)
 
-| Trin | Værktøj                 | Funktion                                                         |
-| ---- | ----------------------- | ---------------------------------------------------------------- |
-| 1    | **RSS by Zapier**       | Overvåger flere RSS-feeds for nye AI-relaterede artikler.        |
-| 2    | **Formatter by Zapier** | Formaterer og gemmer dagens dato.                                |
-| 3    | **Google Sheets**       | Lagrer nyhederne (titel, beskrivelse, link, dato) i et regneark. |
+| Step | Tool                    | Function                                                         |
+|------|--------------------------|------------------------------------------------------------------|
+| 1    | **RSS by Zapier**        | Monitors multiple RSS feeds for new AI-related articles.         |
+| 2    | **Formatter by Zapier**  | Formats and stores the current date.                             |
+| 3    | **Google Sheets**        | Stores each news item (title, description, link, date).          |
 
-## Zapier projekt (Zap b):
+---
 
-| Trin | Værktøj                   | Funktion                                                                   |
-| ---- | ------------------------- | -------------------------------------------------------------------------- |
-| 1    | **Schedule by Zapier**    | Kører én gang dagligt (fx kl. 07:00).                                      |
-| 2    | **Formatter (dato)**      | Identificerer "i går" som mål for filtrering.                              |
-| 3    | **Google Sheets**         | Henter alle nyheder fra i går via Google Sheets-lagringen.                 |
-| 4    | **Formatter (utilities)** | Forbereder og formaterer data.                                             |
-| 5    | **Filter**                | Filtrerer Sheets til kun at medtage rækker med dato = today()-1            |
-| 6    | **Formatter**             | Medtager titel, beskrivelse og feedback til prompten.                      |
-| 7    | **ChatGPT (OpenAI)**      | Sender hele nyhedslisten (med og uden filter) til GPT-4 med instruktioner. |
+## 🔁 Zapier Workflow (Zap B)
+
+| Step | Tool                      | Function                                                                 |
+|------|---------------------------|--------------------------------------------------------------------------|
+| 1    | **Schedule by Zapier**    | Runs once daily (e.g., 07:00).                                           |
+| 2    | **Formatter (date)**      | Identifies "yesterday" as the filter target.                            |
+| 3    | **Google Sheets**         | Retrieves all news from yesterday using the stored data.                |
+| 4    | **Formatter (utilities)** | Prepares and cleans up data formatting.                                 |
+| 5    | **Filter**                | Filters rows to include only those from the previous day.               |
+| 6    | **Formatter**             | Bundles title, description, and feedback for the prompt.                |
+| 7    | **ChatGPT (OpenAI)**      | Sends the full list (raw and filtered) to GPT-4 for summarization.      |

@@ -1,59 +1,59 @@
-# 📘 Projekt 1: Dokumentbaseret Retrieval-Augmented Generation (RAG) Chatbot
+# 📘 Project 1: Document-Based Retrieval-Augmented Generation (RAG) Chatbot
 
-## 🔍 Forretningscase
+## 🔍 Business Case
 
-Virksomheder bruger enorme mængder tid på at lede efter information i brugermanualer, kontrakter, årsrapporter og interne procedurer. En RAG-chatbot kan:
+Companies spend a significant amount of time searching for information in user manuals, contracts, annual reports, and internal procedures. A RAG chatbot can:
 
-- Skære søgetiden ned fra minutter til sekunder. Brugeren stiller et naturligt sprog-spørgsmål og får et præcist svar med kildeangivelse.
-- Øge kvalitet og ensartethed i support og videndeling – samme model giver samme svar hver gang.
-- Effektiv kundesupport & frigivelse af eksperttimer: Teknikere kan fokusere på komplekse opgaver i stedet for basale dokumentspørgsmål og kundesupport kan lynhurtigt søge efter et svar.
-- Skalerbarhed: Uanset om der uploades 1 eller 10.000 sider, falder svartiden ikke mærkbart, fordi søgningen foretages i et optimeret vektor-index.
-- Understøtter flersproget indhold (dansk, engelsk, tysk) → matcher kædens geografiske setup.
-- **Ulempe:** Første gang et dokument skal uploades, kræver det tålmodighed.
-
----
-
-## 🎯 Relevans for Søstrene Grene
-
-Denne løsning giver Søstrene Grene mulighed for effektivt at:
-
-- Søge intelligent i interne dokumenter (fx butiksmanualer, kampagnevejledninger, processer), hvilket reducerer svartid og øger konsistens.
-- Frigive medarbejderressourcer, så de kan fokusere på kundeoplevelse og butiksoplevelser frem for at lede efter information.
-- Standardisere og centralisere vidensdeling på tværs af 240 butikker – afgørende for den igangværende ekspansion og sikring af brandoplevelse.
+- Reduce search time from minutes to seconds. The user asks a natural language question and receives a precise answer with a source reference.
+- Improve the quality and consistency of support and knowledge sharing — the same model gives the same answer every time.
+- Enable efficient customer support & free up expert hours: Technicians can focus on complex tasks instead of basic document questions, and support agents can quickly search for answers.
+- Scalable: Whether you upload 1 or 10,000 pages, response time remains consistent thanks to an optimized vector index.
+- Supports multilingual content (Danish, English, German) → matches the chain's geographic structure.
+- **Limitation:** Uploading documents for the first time requires some patience.
 
 ---
 
-## 🧩 Nøglebiblioteker og værktøjer anvendt
+## 🎯 Relevance Across Organizations
+
+This solution can benefit a wide range of organizations by:
+
+- Enabling fast and intelligent search across internal documentation (e.g., policies, product manuals, training materials), reducing time spent searching and increasing knowledge accessibility.
+- Centralizing and standardizing knowledge across departments, regions, or teams — critical for ensuring alignment and quality.
+- Supporting digital transformation goals by integrating AI-powered assistance into daily workflows.
+- Reducing onboarding time for new employees by giving them direct access to structured internal knowledge.
+
+---
+
+## 🧩 Key Libraries and Tools Used
 
 - **[Docling](https://docling-project.github.io/docling/):**
-  - Parser PDF’er/Word til markdown for bedre strukturering.
+  - Parses PDFs/Word into markdown for better structure.
 - **Pandas:**
-  - Python-bibliotek til datastrukturering, brugt til at gøre tabeller fra markdown mere læsbare.
+  - Python library for data structuring, used to improve readability of tables extracted from markdown.
 - **LangChain:**
-  - Framework til at bygge LLM-baserede applikationer.
+  - Framework for building LLM-based applications.
 - **Chroma:**
-  - Lokalt vektorbibliotek til hurtig semantisk søgning.
+  - Local vector store for fast semantic search.
 - **RecursiveCharacterTextSplitter:**
-  - Deler lange dokumenter i overskuelige chunks, så LLM’en bedre forstår konteksten.
+  - Splits long documents into manageable chunks so the LLM can better understand context.
 - **OpenAI API:**
-  - GPT-model til at generere endelige svar baseret på dokumentindhold.
+  - GPT model used to generate final answers based on document content.
 
 ---
 
-## 💬 Eksempel på prompts og svar
+## 💬 Example Prompts and Answers
 
 ```text
-🔍 Stil et spørgsmål om årsrapporten (eller skriv 'exit'): Hvad var omsætningen for carlsberg i 2023?
-💬 Svar: Omsætningen for Carlsberg i 2023 var 73.585 millioner DKK.
+🔍 Ask a question about the annual report (or type 'exit'): What was Carlsberg's revenue in 2023?
+💬 Answer: Carlsberg's revenue in 2023 was DKK 73,585 million.
 
-🔍 Stil et spørgsmål om årsrapporten (eller skriv 'exit'): Hvor meget er deres profit ændret fra 2023 til 2024?
-💬 Svar: For Carlsberg A/S var nettoudbyttet ændret fra -40,788 millioner DKK i 2023 til 9,116 millioner DKK i 2024. Dette repræsenterer en stigning på 49,904 millioner DKK fra 2023 til 2024.
+🔍 Ask a question about the annual report (or type 'exit'): How much did their profit change from 2023 to 2024?
+💬 Answer: For Carlsberg A/S, net profit changed from -DKK 40,788 million in 2023 to DKK 9,116 million in 2024. This represents an increase of DKK 49,904 million from 2023 to 2024.
 
-🔍 Stil et spørgsmål om årsrapporten (eller skriv 'exit'): Jeg skal præsentere dokumentet for en konkurrerende virksomhed. Fortæl mig de vigtigste punkter som vision, strategier, 2030-mål og vigtigste økonomiske tal. Det må max være på 1000 tegn.
-💬 Svar: Virksomhedens vision er at være førende inden for bæredygtig ølproduktion og skabe værdi for aktionærer. Strategisk fokus inkluderer innovation, miljøvenlige processer og global vækst. Målet for 2030 er at reducere CO2-aftryk med 50% og øge markedsandel med 15%. Vigtigste økonomiske tal inkluderer en stigning i nettoresultat, investeret kapital og markedsandel. Aktiekursen er stigende, og markedsværdien er voksende. En målrettet udbetalingsandel på 49% sikrer konsistent udbytte til aktionærer.
+🔍 Ask a question about the annual report (or type 'exit'): I need to present the document to a competing company. Tell me the key points such as vision, strategies, 2030 goals, and key financials. Limit to 1000 characters.
+💬 Answer: The company's vision is to lead in sustainable beer production and create shareholder value. Strategic focus areas include innovation, environmentally friendly processes, and global growth. By 2030, the goal is to reduce CO2 emissions by 50% and increase market share by 15%. Key financials include growth in net profit, invested capital, and market share. The stock price is rising, and market capitalization is growing. A targeted payout ratio of 49% ensures consistent returns to shareholders.
 
-🔍 Stil et spørgsmål om årsrapporten (eller skriv 'exit'): Er de tilfredse med 2024?
-💬 Svar: Ja, Carlsberg Group er tilfredse med 2024, da de kunne meddele en udvidelse af partnerskabet med PepsiCo til fire nye markeder. Den udvidede partnerskab gør Carlsberg Group til den største partner for PepsiCo i Europa og en af de største globalt. Dette øgede samarbejde forventes at bringe langsigtet muligheder til fordel for begge virksomheder. Derudover har de også fokus på at sikre en konsistent udbyttebetaling til deres aktionærer med en målsætning om en udbetalingsgrad på omkring 50% af justeret nettoresultat. Den foreslåede udbytte for 2024 er DKK 27,0 per aktie, hvilket svarer til en justeret udbetalingsgrad på 49%.
+🔍 Ask a question about the annual report (or type 'exit'): Are they satisfied with 2024?
+💬 Answer: Yes, Carlsberg Group is satisfied with 2024, as they announced an expansion of their partnership with PepsiCo into four new markets. The expanded partnership makes Carlsberg Group the largest partner for PepsiCo in Europe and one of the largest globally. This collaboration is expected to bring long-term opportunities for both companies. Additionally, they emphasize consistent dividend payments, targeting a payout ratio of around 50% of adjusted net income. The proposed dividend for 2024 is DKK 27.0 per share, equivalent to an adjusted payout ratio of 49%.
 
-🔍 Stil et spørgsmål om årsrapporten (eller skriv 'exit'): exit
-
+🔍 Ask a question about the annual report (or type 'exit'): exit

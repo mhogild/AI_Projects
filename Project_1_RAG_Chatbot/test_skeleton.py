@@ -14,11 +14,11 @@ os.environ["OPENAI_API_KEY"] = "XX" #Skjult - Du skal være velkommen til at sp�
 with open("Projekt_1_RAG_Chatbot/test_pdf/test_carlsberg_key_figures.md", "r", encoding="utf-8") as file:
     md_text = file.read()
 
-# === 2. Find alle markdown-tabeller ===
+# === 2. Find all markdown tables ===
 table_pattern = r"((?:\|.+?\|\n)+)"
 tables = re.findall(table_pattern, md_text)
 
-# === 3. Konverter tabeller til pandas DataFrames og lav documents ===
+# === 3. Convert tables to pandas DataFrames and create documents ===
 table_docs = []
 for idx, table_md in enumerate(tables):
     try:
@@ -29,14 +29,14 @@ for idx, table_md in enumerate(tables):
     except Exception as e:
         print(f"⚠️ Kunne ikke parse tabel {idx}: {e}")
 
-# === 4. Split resterende tekst ===
+# === 4. Split remaining text ===
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
 text_docs = text_splitter.create_documents([md_text])
 
-# === 5. Kombinér tekst og tabeller ===
+# === 5. Combine text and tables ===
 all_docs = text_docs + table_docs
 
-# === 6. Embed og gem i Chroma ===
+# === 6. Embed and save in Chroma ===
 embedding = OpenAIEmbeddings()
 vectorstore = Chroma.from_documents(all_docs, embedding, persist_directory="./Projekt_1_RAG_Chatbot/chroma_test")
 vectorstore.persist()
