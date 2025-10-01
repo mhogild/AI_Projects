@@ -10,6 +10,7 @@ Companies spend a significant amount of time searching for information in user m
 - Scalable: Whether you upload 1 or 10,000 pages, response time remains consistent thanks to an optimized vector index.
 - Supports multilingual content (Danish, English, German) → matches the chain's geographic structure.
 - **Limitation:** Uploading documents for the first time requires some patience.
+<img width="541" height="240" alt="image" src="https://github.com/user-attachments/assets/059140b3-fb98-4425-b567-b5c138e6d515" />
 
 ---
 
